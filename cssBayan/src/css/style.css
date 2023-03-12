@@ -22,11 +22,12 @@ h1 {
 }
 
 img {
-  max-width: 300px;
+  max-width: 42%;
+  min-width: 300px;
 }
 
 .accordion {
-  width: 700px;
+  width: 60%;
   margin: auto;
   transition: all 0.3s;
 }
@@ -128,8 +129,13 @@ input[type='checkbox']:checked ~ .meme-label .meme-icon {
 /* Media */
 
 @media screen and (max-width: 821px) {
+  img {
+    max-width: 35%;
+    min-width: 200px;
+  }
+
   .accordion {
-    width: 600px;
+    width: 80%;
   }
 
   .meme-label {
@@ -151,11 +157,16 @@ input[type='checkbox']:checked ~ .meme-label .meme-icon {
 }
 
 @media screen and (max-width: 321px) {
+  img {
+    max-width: 30%;
+    min-width: 150px;
+  }
+
   h1 {
     font-size: 32px;
   }
   .accordion {
-    width: 300px;
+    width: 90%;
   }
 
   .meme-label {
