@@ -38,6 +38,8 @@ img {
 
 .meme {
   width: 100%;
+  transition: all 0.3s ease-in-out;
+  position: relative;
 }
 
 .meme-label {
@@ -56,8 +58,9 @@ img {
   max-height: 0;
   display: flex;
   justify-content: center;
-  transition: all 0.5s;
   opacity: 0;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
 }
 
 .meme-icon {
@@ -67,12 +70,16 @@ img {
   right: 15px;
   bottom: calc(50% - 0px);
   font-size: 20px;
-  color: #2c3e50;
+  /* color: #2c3e50; */
   font-size: 0;
   width: 0;
   height: 0;
   opacity: 0;
   transition: all 0.3s;
+}
+
+.accordion-wrapper:hover > .meme > * {
+  color: #56595d;
 }
 
 .accordion-wrapper:hover > .meme .meme-label .meme-icon {
@@ -84,20 +91,34 @@ img {
 
 input[type='checkbox'] {
   position: absolute;
-  display: none;
+  display: block;
+  height: 181%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  opacity: 0;
+  cursor: pointer;
 }
 
-input:checked ~ .meme-content {
+.meme:hover > .meme-content {
+  max-height: 100vh;
+  opacity: 1;
+  padding: 20px 0;
+  transition: all 0.5s ease-in-out;
+}
+
+input[type='checkbox']:checked ~ .meme-content {
   max-height: 100vh;
   opacity: 1;
   padding: 20px 0;
 }
 
-input:checked ~ .meme-label {
+input[type='checkbox']:checked ~ .meme-label {
   color: #56595d;
 }
 
-input:checked ~ .meme-label .meme-icon {
+input[type='checkbox']:checked ~ .meme-label .meme-icon {
   width: 10px;
   height: 10px;
   opacity: 1;
