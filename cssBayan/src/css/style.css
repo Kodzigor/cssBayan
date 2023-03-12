@@ -48,6 +48,7 @@ img {
   font-size: 24px;
   font-weight: 700;
   border-top: 1px solid #4a535d;
+  cursor: pointer;
   position: relative;
 }
 
@@ -60,6 +61,24 @@ img {
   opacity: 0;
 }
 
+.meme-icon {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  right: 15px;
+  bottom: calc(50% - 0px);
+  font-size: 20px;
+  color: #2c3e50;
+  transition: all 0.3s;
+}
+
+.fa-xmark {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  font-size: 0;
+}
+
 input[type='checkbox'] {
   position: absolute;
   display: none;
@@ -69,4 +88,18 @@ input:checked ~ .meme-content {
   max-height: 100vh;
   opacity: 1;
   padding: 20px 0;
+}
+
+input:checked ~ .meme-label .fa-plus {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  font-size: 0;
+}
+
+input:checked ~ .meme-label .fa-xmark {
+  width: 10px;
+  height: 10px;
+  opacity: 1;
+  font-size: 20px;
 }
